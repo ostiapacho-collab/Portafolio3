@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <h1>Mi pagina web</h1>
+
+    <style>
+
+  .nav-item{
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    margin: 2px;
+
+    font-size: 35px;
+
+    background: rgba(0,0,0,0.5);
+
+    backdrop-filter: blur(10px);
+
+    border: 2px solid white;
+
+    border-radius: 20px;
+
+    color: rgb(2, 196, 255);
+
+    text-decoration: none;
+}
+
+.nav-item:hover{
+    transform: scale(1.05);
+
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+        h1 {
+            font-family: monospace;
+            animation: aparecer 2s;
+        }
+
+        video {
+
+
+            position: fixed;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            top: 0;
+
+            left: 0;
+
+            z-index: -1;
+        }
+
+        #reloj {
+            font-family: monospace;
+            text-align: center;
+            color: red;
+            text-shadow: 0px 0px 20px rgb(255, 0, 0);
+            font-size: 50px;
+            animation: aparecer 5s;
+        }
+
+        .navbar a:hover {
+
+            color: rgb(255, 255, 255);
+
+            text-shadow:
+                0px 0px 10px rgb(0, 0, 0),
+                0px 0px 20px rgb(24, 24, 24),
+                0px 0px 40px rgb(0, 0, 0);
+        }
+
+        @keyframes escribir {
+
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes parpadeo {
+
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        h2 {
+            font-family: monospace;
+            animation: aparecer 3s;
+        }
+
+        img {
+            animation: scala 2s;
+
+        }
+
+        @keyframes scala {
+
+            from {
+                scale: 0;
+            }
+
+            to {
+                scale: 1;
+            }
+        }
+
+        h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: #00f3ff;
+            text-shadow: 0 0 10px rgba(238, 255, 0, 0.5), 0 0 20px rgba(0, 243, 255, 0.3);
+            margin-bottom: 10px;
+
+            color: gold;
+            animation: aparecer 2s;
+
+            text-align: center;
+
+        }
+
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: #00f3ff;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.3);
+            margin-bottom: 10px;
+            color: cyan;
+
+            text-align: center;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgb(0, 0, 0);
+            color: black;
+        }
+
+        .navbar a {
+
+            color: rgb(0, 255, 242);
+
+            text-shadow: 0px 0px 10px cyan;
+        }
+
+     
+
+        .navbar a:hover {
+            transition: 0.7s;
+        }
+
+        .navbar {
+            font-family: monospace;
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+        
+
+            padding: 20px;
+
+            text-decoration: none;
+            margin: 20px;
+            text-align: center;
+            animation: aparecer 2s;
+            background-color: transparent 
+            
+
+        }
+
+        .navbar a:hover {
+
+
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+
+    <a href="inicio.html" target="_blank" onclick="sonido()" class="nav-item">
+    Inicio
+</a>
+
+<a href="Proyectos.html" target="_blank" onclick="sonido()" class="nav-item">
+    Proyecto
+</a>
+
+<a href="contacto.html" target="_blank" onclick="sonido()" class="nav-item">
+    contacto
+</a>
+</div>
+    <h3>reloj</h3>
+
+
+    <h4 id="reloj"></h4>
+
+    <script>
+        function actualizarRelog() {
+
+            let fecha = new Date();
+
+            let horas = fecha.getHours();
+            horas = horas.toString().padStart(2, "0");
+
+            let minutos = fecha.getMinutes();
+            minutos = minutos.toString().padStart(2, "0");
+
+            let segundos = fecha.getSeconds();
+            segundos = segundos.toString().padStart(2, "0");
+
+            document.getElementById("reloj").innerHTML =
+                horas + ":" + minutos + ":" + segundos;
+        }
+        actualizarRelog();
+        setInterval(actualizarRelog, 1000);
+    </script>
+
+    <video autoplay muted loop>
+        <source src="fondo.mp4">
+    </video>
+
+    <audio id="sonido" preload="auto">
+    <source src="Click.mp3" type="audio/mpeg">
+</audio>
+
+    <audio id="CLICK">
+        <source src="minecraft.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+    function sonar(){
+    let audio = new Audio("click.mp3");
+    audio.play();
+}
+</script>
+    <script>
+        function sonido() {
+            document.getElementById("CLICK").play();
+            let audio =
+                document.getElementById("click");
+
+            audio.currentTime = 0;
+
+            audio.play();
+        }
+    </script>
+</body>

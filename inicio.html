@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        h5{
+            animation: aparecer 2s;
+        }
+        #caja2{
+            display: none;
+            animation: aparecer 2s
+        }
+        #caja {
+
+            display: none;
+            margin: 30px;
+            animation: aparecer 2s;
+        }
+
+        .quien-soy:hover {
+
+            transform: scale(1.03);
+
+            transition: 0.4s;
+        }
+
+        .quien-soy {
+            animation: aparecer 2s;
+
+            width: 300px;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background: rgba(0, 0, 0, 0.5);
+
+            border: 2px solid rgb(255, 241, 51);
+
+            color: white;
+
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 20px rgb(0, 0, 0);
+
+        }
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            z-index: -1;
+
+            pointer-events: none;
+        }
+
+        .habilidad:hover {
+
+            transform: scale(1.05);
+
+            transition: 0.4s;
+
+            box-shadow: 0px 0px 20px cyan;
+        }
+
+        .habilidad {
+            animation: aparecer 2s;
+
+            width: 200px;
+
+            padding: 15px;
+
+            background: rgba(0, 0, 0, 0.5);
+
+            border: 2px solid cyan;
+
+            border-radius: 15px;
+
+            color: white;
+
+            list-style: none;
+
+            margin: 15px auto;
+
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        button:hover {
+             cursor: pointer;
+            transform: scale(1.05);
+
+            transition: 0.4s;
+
+            box-shadow: 0px 0px 20px rgb(0, 0, 0);
+        }
+
+        button {
+            animation: aparecer 2s;
+             cursor: pointer;
+            
+            color: rgb(255, 255, 255);
+            width: 300px;
+
+
+            margin: 30px;
+
+            padding: 30px;
+
+            border: 2px solid cyan;
+
+            border-radius: 20px;
+
+            background: rgba(0, 0, 0, 0.607);
+
+            backdrop-filter: blur(10px);
+
+            text-align: center;
+
+            box-shadow: 0px 0px 20px rgb(0, 0, 0);
+        }
+
+        h5 {
+            font-family: Arial;
+            color: aqua;
+            padding-left: 30px;
+            font-size: 20px;
+
+        }
+
+        video {
+
+
+            position: fixed;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            top: 0;
+
+            left: 0;
+
+            z-index: -2;
+        }
+
+
+        ul {
+            animation: aparecer 2s;
+        }
+
+        h3 {
+             color: rgb(255, 242, 0);
+
+    font-size: 30px;
+
+    text-align: center;
+
+    text-shadow:
+    0px 0px 10px rgb(0, 0, 0),
+    0px 0px 20px rgba(217, 255, 0, 0.5);
+
+    background: rgba(0,0,0,0.3);
+
+    padding: 10px 20px;
+
+    border-radius: 15px;
+
+    width: fit-content;
+
+
+    animation: aparecer 2s;
+
+    margin-left: 620px ;
+        }
+
+        li {
+            background: rgba(0, 0, 0, 0.5);
+
+            backdrop-filter: blur(10px);
+
+            border: 2px solid cyan;
+        }
+
+        #texto {
+            display: none;
+            color: rgb(255, 0, 0);
+        }
+
+        button {
+            
+            padding: 20px;
+        }
+
+        h4 {
+            color: white;
+            font-family: Arial;
+            padding-left: 30px;
+            font-family: monospace;
+            font-size: 20px;
+            width: 0;
+
+            overflow: hidden;
+
+            white-space: nowrap;
+
+            border-right: 4px solid white;
+
+            animation:
+                escribir 4s steps(80) forwards,
+                parpadeo 0.5s 3;
+
+            border-right: none;
+
+            color: rgb(255, 0, 0);
+        }
+
+
+        @keyframes escribir {
+
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes parpadeo {
+
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        h2 {
+            display: flex;
+            padding-left: 30px;
+            color: rgb(255, 255, 255);
+            font-family: Arial;
+            animation: aparecer 3s;
+        }
+
+        img:hover{
+            cursor: pointer;
+
+            transform: scale(1.05);
+
+            transition: 0.5s;
+
+
+            border: 2px solid rgb(234, 255, 0);
+
+            backdrop-filter: blur(10px);
+        }
+        img {
+             border: 2px solid rgb(0, 255, 242);
+            width: 300px;
+
+            padding: 30px;
+
+            border-radius: 30px;
+
+            background: rgba(255, 255, 255, 0.607);
+
+            backdrop-filter: blur(10px);
+
+
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.833);
+
+            animation: aparecer 2s;
+            margin: 30px;
+
+        }
+
+        @keyframes scala {
+
+            from {
+                scale: 0;
+            }
+
+            to {
+                scale: 1;
+            }
+        }
+
+        img {
+            width: 400px;
+            height: 120px;
+            border-radius: 20px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+        }
+
+        h1 {
+             color: rgb(0, 255, 255);
+    font-size: 30px;
+    font-family: 'Segoe UI', sans-serif;
+
+    text-shadow:
+    0px 0px 10px rgb(0, 0, 0),
+    0px 0px 20px rgba(0, 0, 0, 0.5);
+
+    background: rgba(0,0,0,0.3);
+
+    padding: 15px 30px;
+
+    border-radius: 40px;
+
+    width: fit-content;
+
+    margin-left: 630px ;
+
+    animation: aparecer 2s;
+    
+        }
+
+        h1 {
+            ffont-family: Arial;
+            animation: aparecer 2s;
+        }
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>hola bienvenido</h1>
+
+    <button onclick="mostrarCaja(); sonar()">
+        Quien soy?
+    </button>
+    <div class="quien-soy" id="caja">
+        <p>
+            Soy un desarrollador web principiante apasionado por el diseño y la programación.
+        </p>
+
+    </div>
+
+    <script>
+        let caja = document.getElementById("caja");
+        function mostrarCaja() {
+            if (caja.style.display == "none") {
+                caja.style.display = "block";
+            }
+
+            else {
+                caja.style.display == "block"
+                caja.style.display = "none";
+
+            }
+        }
+    </script>
+
+    <h3> mis habilidades son:</h3>
+    <ul>
+        <li class="habilidad">Java script</li>
+        <li class="habilidad">html</li>
+        <li class="habilidad">Css</li>
+        <li class="habilidad">edicion de video</li>
+    </ul>
+
+     <button onclick="mostrarimagen(); sonar()">
+       Sigueme en mi cuenta de ig
+    </button>
+    <div class=" Sigueme-en-mi-cuenta-de-ig" id="caja2">
+
+    <a href="https://www.instagram.com/nosev965/" target="_blank">
+
+        <img src="perfil.png" alt="logo">
+
+    </a>
+    </div>
+      <script>
+        let caja2 = document.getElementById("caja2");
+        function mostrarimagen() {
+            if (caja2.style.display == "none") {
+                caja2.style.display = "block";
+            }
+
+            else {
+                caja2.style.display == "block"
+                caja2.style.display = "none";
+
+            }
+        }
+    </script>
+
+    <h5 id="contador">
+        clicks 0
+    </h5>
+
+    <button onclick="sumarclick(); sonar()">
+        click aqui
+    </button>
+
+    <script>
+
+        let clicks = 0;
+
+        function sumarclick() {
+            clicks++;
+            document.getElementById("contador").innerHTML
+                = "Clicks: " + clicks
+
+        }
+    </script>
+
+  <audio id="sonido" src="Click.mp3"></audio>
+
+    <audio id="sonido" preload="auto">
+    <source src="Click.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+
+function sonar(){
+    let audio = document.getElementById("sonido").cloneNode(true);
+    audio.play();
+
+}
+
+</script>
+
+    <video autoplay muted loop>
+        <source src="videoplayback.mp4">
+    </video>
